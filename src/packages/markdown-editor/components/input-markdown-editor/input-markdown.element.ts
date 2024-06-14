@@ -515,7 +515,7 @@ export class UmbInputMarkdownElement extends UUIFormControlMixin(UmbLitElement, 
 
 				<uui-button-group>
 					${this._actionExtensions.map(
-						(action) => html`
+			(action) => html`
 							<uui-button
 								compact
 								look="secondary"
@@ -524,7 +524,7 @@ export class UmbInputMarkdownElement extends UUIFormControlMixin(UmbLitElement, 
 								<uui-icon name="icon-link"></uui-icon>
 							</uui-button>
 						`,
-					)}
+		)}
 				</uui-button-group>
 
 				<uui-button-group>
@@ -533,9 +533,9 @@ export class UmbInputMarkdownElement extends UUIFormControlMixin(UmbLitElement, 
 						label="Press F1 for all actions"
 						title="Press F1 for all actions"
 						@click=${() => {
-							this._focusEditor();
-							this.#editor?.monacoEditor?.trigger('', 'editor.action.quickCommand', '');
-						}}>
+				this._focusEditor();
+				this.#editor?.monacoEditor?.trigger('', 'editor.action.quickCommand', '');
+			}}>
 						<uui-key>F1</uui-key>
 					</uui-button>
 				</uui-button-group>
@@ -561,11 +561,9 @@ export class UmbInputMarkdownElement extends UUIFormControlMixin(UmbLitElement, 
 			#toolbar {
 				background-color: var(--uui-color-background-alt);
 				display: flex;
+				flex-wrap: wrap;
 				gap: var(--uui-size-2);
-			}
-
-			#toolbar uui-button-group:last-child {
-				margin-left: auto;
+				margin-bottom: var(--uui-size-2);
 			}
 
 			umb-code-editor {
